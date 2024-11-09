@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+</head>
+{% block content %} <!--django template language-->
+<body>    
+    {% for car in cars %}
+    <h1>{{car.brand}} - {{car.model}} - {{car.model_year}}</h1>
+    {% endfor %}
+</body>
+{% endblock %}
+</html>
