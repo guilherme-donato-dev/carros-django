@@ -19,7 +19,7 @@ class Car(models.Model):
     model_year = models.IntegerField(null=True, blank=True)
     plate = models.CharField(max_length=10, null=True, blank=True)
     value = models.FloatField(null=True, blank=True)
-    photo = models.ImageField(upload_to='cars/', null=True, blank=True)
+    photo = models.ImageField(upload_to='cars/', null=True, blank=False)
 
     #para substituir o "Car Object" e aparecer o nome do próprio carro quando clicar nele
     def __str__(self):
