@@ -1,7 +1,9 @@
 from django.db import models
 
 # Create your models here.
+#depois de mexer no models sempre dê o makemigrations e migrate
 
+#criação da tabela Brand com os atributos/colunas logo abaixo
 class Brand(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
@@ -11,10 +13,12 @@ class Brand(models.Model):
         return self.name
 
 
+#criação da tabela Car com os atributos/colunas logo abaixo
 class Car(models.Model):
     id = models.AutoField(primary_key=True)
     model = models.CharField(max_length=200)
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')
+    color = models.CharField(max_length=40, null=True, blank=True )
     factory_year = models.IntegerField(null=True, blank=True)
     model_year = models.IntegerField(null=True, blank=True)
     plate = models.CharField(max_length=10, null=True, blank=True)
