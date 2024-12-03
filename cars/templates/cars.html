@@ -79,7 +79,7 @@
     }
 
     button[type="submit"] {
-        background-color: #d00707;
+        background-color: #0a8df1;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -90,7 +90,16 @@
     }
 
     button[type="submit"]:hover {
-        background-color: #e15454;
+        background-color: #0092bb;
+    }
+
+    a {
+      text-decoration: none; /* Remove o sublinhado */
+      color: inherit; /* Herda a cor do elemento pai */
+    }
+
+    a:hover{
+      color: #0092bb;
     }
   </style>
 
@@ -102,11 +111,13 @@
   <div class="car-grid">
     {% if cars %}
       {% for car in cars %}
+      <a href="{% url 'car_detail' car.pk %}">
         <div class="car-card">
           <img src="{{ car.photo.url }}" alt="{{ car.model }} - {{ car.brand }}">
           <h2>{{ car.brand }} {{ car.model }}</h2>
           <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
         </div>
+      </a>
       {% endfor %}
     {% else %}
       <p class="no-results">Nenhum carro encontrado.</p>
