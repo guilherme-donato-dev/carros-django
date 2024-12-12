@@ -38,7 +38,7 @@ class CarDetailView(DetailView):  #view nativa de Django
     model = Car
     template_name = 'car_detail.html'
 
-@method_decorator(login_required(login_url= 'login'), name= 'dispatch')
+@method_decorator(login_required(login_url= 'login'), name= 'dispatch') 
 class CarUpdateView(UpdateView):
     model = Car
     form_class = CarModelForm
